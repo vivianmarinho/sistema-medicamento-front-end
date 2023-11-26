@@ -58,7 +58,7 @@ const Login = () => {
           type='submit'
           text='Entrar!'
           onClick={handleSubmit}
-          disabled={loading === true || !validadorInput()}
+         
         />
         <SubContainerSign>
           <p>Não possui conta?</p>

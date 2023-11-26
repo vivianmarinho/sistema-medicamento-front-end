@@ -25,12 +25,12 @@ const Cadastro = () => {
         cpf: form.cpf,
         telefone: form.telefone,
         email: form.email,
-        senha: form.password,
+        senha: form.senha,
       })
       if (data) {
         const responseLogin = await userService.login({
           cpf: form.cpf,
-          senha: form.password
+          senha: form.senha
         })
         if (responseLogin === true) {
           alert('usuário Cadastrado com Sucesso')
@@ -50,7 +50,7 @@ const Cadastro = () => {
 
   const validadorInput = () => {
     return validarCpf(form.cpf)
-    && validarSenha(form.password)
+    && validarSenha(form.senha)
     && validarTelefone(form.telefone)
     && validarEmail(form.email)
     && validarConfirmarSenha(form.password, form.confirmarPassword)
@@ -101,7 +101,7 @@ const Cadastro = () => {
           type='submit'
           text='Efetuar Cadastro!'
           onClick={handleSubmit}
-          disabled={loading === true || !validadorInput()}
+          
         />
         <SubContainerSign>
           <p>Já possui conta?</p>

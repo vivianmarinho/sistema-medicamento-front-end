@@ -10,10 +10,11 @@ export default class UserServices {
   async login(dados) {
     try {
       const { data } = await this.axios.post('/auth/usuario', dados);
-      if (data) {
-        localStorage.setItem("cpf", data.user.cpf);
-        localStorage.setItem("senha", data.user.senha);
-        localStorage.setItem("token", data.token.token);
+      if (data) { console.log(data)
+        //localStorage.setItem("cpf", data.user.cpf);
+       // localStorage.setItem("senha", data.user.senha);
+        localStorage.setItem("token", data.token);
+        //localStorage.setItem("cpf", data.data.cpf);
         return true;
       }
     } catch (error) {
@@ -36,8 +37,8 @@ export default class UserServices {
   }
 
   async logout() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("senha");
     localStorage.removeItem("cpf");
+    localStorage.removeItem("senha");
+    localStorage.removeItem("token");
   }
 }
