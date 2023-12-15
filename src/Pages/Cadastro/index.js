@@ -16,6 +16,11 @@ const Cadastro = () => {
   const [form, setForm] = useState([])
   const navigate = useNavigate()
 
+ /* const registroMedicamento = async(event) =>{
+    //event.preventDefault();
+    navigate('/registro')
+  }*/
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -103,6 +108,8 @@ const Cadastro = () => {
           onClick={handleSubmit}
           
         />
+
+     
         <SubContainerSign>
           <p>Já possui conta?</p>
           <NavLink to="*">Login</NavLink>

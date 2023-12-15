@@ -6,6 +6,7 @@ import { validarCpf, validarSenha } from '../../Utils/validadores'
 import { NavLink, useNavigate } from 'react-router-dom'
 import UserService from '../../Service/UserService'
 
+
 const userService = new UserService()
 
 const Login = () => {

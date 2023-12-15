@@ -1,26 +1,27 @@
 import axios from 'axios';
 
-export default class UserServices {
+export default class RegistroService {
   constructor() {
     const baseURL = new URL('http://localhost:8080');
     baseURL.pathname = process.env.REACT_APP_API_LOGIN || '';
     this.axios = axios.create({ baseURL: baseURL.toString() });
   }
 
-  async cadastrarMedicamento(dados) {
+  async cadastrarRegistro(dados) {
     try {
-      const { data } = await this.axios.post('/medicamento', dados);
+      const { data } = await this.axios.post('/medicacao', dados);
       if (data && data.success)  { console.log("Medicamento cadastrado com sucesso:", data.message);
-    return true;
-              //localStorage.setItem("token", data.token);
+      
+              
         
         return true;
       }
     } catch (error) {
-      console.error("Erro ao tentar inserir o medicamento:", error);
+      console.error("Erro ao tentar inserir o registro:", error);
     }
     return false;
   }
 
+  
  
 }

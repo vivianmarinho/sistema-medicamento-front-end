@@ -36,6 +36,10 @@ export default class UserServices {
     return !!localStorage.getItem("token");
   }
 
+  getUserId(){
+    return !!localStorage.getItem("")
+  }
+
   async logout() {
     localStorage.removeItem("cpf");
     localStorage.removeItem("senha");

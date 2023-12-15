@@ -2,8 +2,11 @@ import React from 'react'
 import Login from '../Pages/Login/index'
 import ProtectedRoutes from '../Routes/ProtectedRoutes'
 import Cadastro from '../Pages/Cadastro/index'
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import CadastroRegistro from '../Pages/Registro'
+import Home from '../Pages/Home'
+import BuscaHistorico from '../Pages/Historico'
+
 
 const Routering = () => {
   return ( 
@@ -13,7 +16,21 @@ const Routering = () => {
         <Route path="/cadastrar" element={<Cadastro/>} />
         <Route path="/home" element={
           <ProtectedRoutes>
-            <h1>Home</h1> 
+          <Home/>
+        </ProtectedRoutes>
+          }
+        />
+
+        <Route path="/registro" element={
+          <ProtectedRoutes>
+            <CadastroRegistro/>
+          </ProtectedRoutes>
+          }
+        />
+
+      <Route path="/historico" element={
+          <ProtectedRoutes>
+            <BuscaHistorico/>
           </ProtectedRoutes>
           }
         />
