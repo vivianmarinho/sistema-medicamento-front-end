@@ -6,7 +6,9 @@ import HistoricoService from '../../Service/HistoricoService'
 
 const historicoService = new HistoricoService()
 
+
 const Home = () => {
+  const medicacoes = []
  
  const navigate = useNavigate();
 
@@ -14,33 +16,19 @@ const Home = () => {
     event.preventDefault();
     navigate('/registro');
  };
-const buscarHistorico = useCallback(async (event) => {
-  //event.preventDefault();
+ const buscarHistorico = async (event) => {
+  event.preventDefault();
+  await historico();
+};
+
+const historico = useCallback(async () => {
   try {
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     const responseHistorico = await historicoService.buscarHistorico();
-    // Lógica com a resposta do histórico, se necessário
+    console.log(responseHistorico);
   } catch (error) {
     console.error("Erro ao executar:", error);
   }
-}, []); // Se você tiver dependências, coloque-as dentro do array vazio
-
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      console.log("Chamando buscarHistorico");
-      await buscarHistorico();
-    } catch (error) {
-      console.error("Erro ao executar:", error);
-    }
-  };
-
-  fetchData(); // Chama a função ao montar o componente
-
-  return () => {
-    // Lógica de limpeza (executada ao desmontar)
-  };
-}, [buscarHistorico]);
+}, []);
 
 
   return (
@@ -58,11 +46,14 @@ useEffect(() => {
         <Botao
           type='submit'
           text='Historico'
-          onClick={buscarHistorico}
+          onClick={async (event) => await buscarHistorico(event)}
           
         />
+
        
       </Form>
+
+     
     </Container>
     
   )

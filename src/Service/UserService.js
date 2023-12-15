@@ -14,7 +14,7 @@ export default class UserServices {
         //localStorage.setItem("cpf", data.user.cpf);
        // localStorage.setItem("senha", data.user.senha);
         localStorage.setItem("token", data.token);
-        //localStorage.setItem("cpf", data.data.cpf);
+        localStorage.setItem("cpf", data.cpf);
         return true;
       }
     } catch (error) {

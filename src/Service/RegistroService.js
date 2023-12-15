@@ -5,6 +5,8 @@ export default class RegistroService {
     const baseURL = new URL('http://localhost:8080');
     baseURL.pathname = process.env.REACT_APP_API_LOGIN || '';
     this.axios = axios.create({ baseURL: baseURL.toString() });
+    const token =  localStorage.getItem("token");
+    this.axios.defaults.headers.common['Authorization'] = `${token}`;
   }
 
   async cadastrarRegistro(dados) {

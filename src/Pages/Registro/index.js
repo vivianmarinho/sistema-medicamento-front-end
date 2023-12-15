@@ -26,9 +26,13 @@ const CadastroRegistro = () => {
     try {
       setLoading(true);
       console.log(form)
+      const cpf =  localStorage.getItem("cpf");
+      
       const { data } = await registroService.cadastrarRegistro({
 
-        cpf: form.cpf,
+        usuario:{
+          cpf: cpf
+        } ,
         dataInicio: form.dataInicio,
         dataFim: form.dataFim,
         horaInicio: form.horaInicio,
@@ -86,6 +90,12 @@ const CadastroRegistro = () => {
           placeholder='Data fim'
           onChange={handleChange}
           type='localdate'
+        />
+         <Input
+          name='horaInicio'
+          placeholder='Hora inicio'
+          onChange={handleChange}
+          type='localTime'
         />
         <Input
           name='quantidade'
