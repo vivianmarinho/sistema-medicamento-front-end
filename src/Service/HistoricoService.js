@@ -21,4 +21,29 @@ export default class HistoricoService {
     }
   }
 
+  async apagarHistorico(id) {
+    try {
+      
+      // Certifique-se de que o idMedicacao seja um número válido
+      if (isNaN(id)) {
+         throw new Error('O ID deve ser um número.');
+      }
+  
+      // Enviando a solicitação DELETE com o idMedicacao
+      const response = await this.axios.delete(`/medicacao/${id}`);
+      return response.data;
+    } catch (error) {
+      throw new Error('Erro ao apagar o histórico: ' + error.message);
+    }
+  }
+
+  async editarHistorico(id) {
+    try {
+      const response = await this.axios.put(`medicacao/edit/${id}`);
+      return response.data;
+    } catch (error) {
+      throw new Error('Erro ao editar o histórico: ' + error.message);
+    }
+  }
+
 }

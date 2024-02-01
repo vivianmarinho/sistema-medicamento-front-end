@@ -41,13 +41,8 @@ const CadastroRegistro = () => {
         nomeMedicamento: form.nomeMedicamento,
       })
 
-      if (data) {
-        
-        
-          alert('Registro realizado')
-          
-        
-    }
+      alert('Cadastro realizado com sucesso!');
+      navigate('/home')
        
       setLoading(false);
     } catch (err) {

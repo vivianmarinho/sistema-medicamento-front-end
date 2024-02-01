@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -46,3 +47,36 @@ export const SubContainerSign = styled.div`
   gap: 0px 20px;
   align-items: center;
 `
+
+
+
+export const HistoryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #383838;
+  height: 100vh;
+  min-width: 100vw;
+  overflow: auto; /* Adicionando barra de rolagem */
+`;
+
+
+export const HistoryItem = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #201d1d;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 80%;
+  max-width: 600px;
+
+  p {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+  }
+`;

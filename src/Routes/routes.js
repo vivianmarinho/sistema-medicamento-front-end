@@ -8,6 +8,8 @@ import Home from '../Pages/Home'
 import BuscaHistorico from '../Pages/Historico'
 
 
+
+
 const Routering = () => {
   return ( 
     <Router>
@@ -34,6 +36,8 @@ const Routering = () => {
           </ProtectedRoutes>
           }
         />
+
+        
       </Routes>
     </Router>
    );

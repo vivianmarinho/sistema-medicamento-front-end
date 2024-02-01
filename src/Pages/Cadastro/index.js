@@ -31,7 +31,11 @@ const Cadastro = () => {
         telefone: form.telefone,
         email: form.email,
         senha: form.senha,
+        
       })
+      alert('Cadastro realizado com sucesso!');
+      navigate('/home')
+      
       if (data) {
         const responseLogin = await userService.login({
           cpf: form.cpf,

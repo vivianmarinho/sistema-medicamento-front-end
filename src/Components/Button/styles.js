@@ -10,6 +10,15 @@ export const BotaoCustomizado = styled.button`
   height: 50px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
+  
+  & + & {
+    margin-top: 10px;
+  }
+
+ & {
+    margin-top: 10px;
+  }
+  
 
   ${props => props.disabled === false &&`
     &:hover {

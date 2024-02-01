@@ -8,13 +8,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body {
-    width: 100vw;
-    min-height: 100vh; /* Altura mínima da janela de visualização */
+    width: 100vw; /* Ocupa toda a largura da janela de visualização */
+    height: 100vh; /* Ocupa toda a altura da janela de visualização */
     font-family: Poppins;
-  }
-
-  body {
-    overflow-x: hidden; /* Para evitar a barra de rolagem horizontal */
+    overflow-x: visible; /* Ou 'initial' para permitir o overflow-x */
+    overflow-y: auto; /* Mantendo o overflow-y */
   }
 
   #root {
@@ -24,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: #f0f2f5;
     min-height: 100vh; /* Ocupa toda a altura da janela de visualização */
     width: 100%;
+    font-family: 'Poppins', sans-serif;
   }
 `;
 
