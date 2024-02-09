@@ -39,6 +39,8 @@ const Login = () => {
     return validarCpf(form.cpf) && validarSenha(form.senha)
   }
 
+  
+
   return (
     <Container>
       <Form>

@@ -84,7 +84,7 @@ const Cadastro = () => {
         />
         <Input
           name='telefone'
-          placeholder='Digite o seu telefone'
+          placeholder='Digite telefone'
           onChange={handleChange}
           type='number'
         />

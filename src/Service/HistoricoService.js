@@ -37,13 +37,18 @@ export default class HistoricoService {
     }
   }
 
-  async editarHistorico(id) {
+  async editarHistorico(id, dados) {
     try {
-      const response = await this.axios.put(`medicacao/edit/${id}`);
+      // Certifique-se de que o idMedicacao seja um número válido
+      if (isNaN(id)) {
+        throw new Error('O ID deve ser um número.');
+      }
+  
+      // Enviando a solicitação PUT com o idMedicacao e os dados para atualização
+      const response = await this.axios.put(`/medicacao/edit/${id}`, dados);
       return response.data;
     } catch (error) {
       throw new Error('Erro ao editar o histórico: ' + error.message);
     }
   }
-
 }
