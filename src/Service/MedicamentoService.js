@@ -12,10 +12,7 @@ export default class UserServices {
       const { data } = await this.axios.post('/medicamento', dados);
       if (data && data.success)  { console.log("Medicamento cadastrado com sucesso:", data.message);
     return true;
-              //localStorage.setItem("token", data.token);
-        
-        return true;
-      }
+    }
     } catch (error) {
       console.error("Erro ao tentar inserir o medicamento:", error);
     }

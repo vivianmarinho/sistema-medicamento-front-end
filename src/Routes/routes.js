@@ -5,7 +5,7 @@ import Cadastro from '../Pages/Cadastro/index'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import CadastroRegistro from '../Pages/Registro'
 import Home from '../Pages/Home'
-import BuscaHistorico from '../Pages/Historico'
+
 
 
 
@@ -30,14 +30,7 @@ const Routering = () => {
           }
         />
 
-      <Route path="/historico" element={
-          <ProtectedRoutes>
-            <BuscaHistorico/>
-          </ProtectedRoutes>
-          }
-        />
-
-        
+             
       </Routes>
     </Router>
    );

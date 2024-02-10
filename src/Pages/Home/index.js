@@ -24,7 +24,7 @@ const handleSave = async () => {
     // Faça uma cópia do histórico atualizado
     const updatedHistorico = historico.map(medicacao => {
       if (medicacao.id === editedMedicacao.idMedicacao) {
-        return editedMedicacao; // Use a nova versão de editedMedicacao
+        return editedMedicacao;
       }
       return medicacao;
     });
@@ -32,7 +32,7 @@ const handleSave = async () => {
     // Atualize o estado historico com os itens atualizados
     setHistorico(updatedHistorico);
 
-    // Chame o serviço para salvar as alterações
+    // Chamando o serviço para salvar as alterações
     await historicoService.editarHistorico(editedMedicacao.idMedicacao, editedMedicacao);
 
     console.log("Medicação editada com sucesso!");

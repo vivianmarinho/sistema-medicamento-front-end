@@ -16,10 +16,7 @@ const Cadastro = () => {
   const [form, setForm] = useState([])
   const navigate = useNavigate()
 
- /* const registroMedicamento = async(event) =>{
-    //event.preventDefault();
-    navigate('/registro')
-  }*/
+ 
 
   const handleSubmit = async (event) => {
     event.preventDefault();

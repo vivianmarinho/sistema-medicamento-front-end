@@ -11,8 +11,6 @@ export default class UserServices {
     try {
       const { data } = await this.axios.post('/auth/usuario', dados);
       if (data) { console.log(data)
-        //localStorage.setItem("cpf", data.user.cpf);
-       // localStorage.setItem("senha", data.user.senha);
         localStorage.setItem("token", data.token);
         localStorage.setItem("cpf", data.cpf);
         return true;

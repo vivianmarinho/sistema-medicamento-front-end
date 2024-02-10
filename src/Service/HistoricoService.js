@@ -24,12 +24,12 @@ export default class HistoricoService {
   async apagarHistorico(id) {
     try {
       
-      // Certifique-se de que o idMedicacao seja um número válido
+      
       if (isNaN(id)) {
          throw new Error('O ID deve ser um número.');
       }
   
-      // Enviando a solicitação DELETE com o idMedicacao
+      
       const response = await this.axios.delete(`/medicacao/${id}`);
       return response.data;
     } catch (error) {
@@ -39,12 +39,12 @@ export default class HistoricoService {
 
   async editarHistorico(id, dados) {
     try {
-      // Certifique-se de que o idMedicacao seja um número válido
+      
       if (isNaN(id)) {
         throw new Error('O ID deve ser um número.');
       }
   
-      // Enviando a solicitação PUT com o idMedicacao e os dados para atualização
+      
       const response = await this.axios.put(`/medicacao/edit/${id}`, dados);
       return response.data;
     } catch (error) {

@@ -1,5 +1,5 @@
-// apiService.js
-const apiUrl = 'http://localhost:8080/medicacao_notificacao/teste'; // Substitua com a URL correta da sua API
+
+const apiUrl = 'http://localhost:8080/medicacao_notificacao/teste';
 
 export function Confirmar(medicacaoId) {
     return fetch(apiUrl, {
@@ -16,6 +16,6 @@ export function Confirmar(medicacaoId) {
     .then(response => response.json())
     .catch(error => {
         console.error('Erro ao interagir com a API:', error);
-        throw error; // Lança o erro para ser tratado onde a função for chamada
+        throw error; 
     });
 }
